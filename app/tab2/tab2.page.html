@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar bg color="danger">
+  <ion-title>REGISTRASI TOP UP</ion-title>
+  <ion-buttons slot="start">
+  <ion-back-button></ion-back-button>
+  </ion-buttons>
+  </ion-toolbar>
+ </ion-header>
+ <ion-content padding bg color="dark">
+  <ion-card class="welcome-card bg-content" style="background-image: linear-gradient(to left, black, red);">
+  <ion-card-header>
+  <ion-card-title><font color="white">Registrasi Top Up Game</font></ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+  <p><font color="white">Silakan Isi Data di Bawah Ini Untuk Melakukan Transaksi Top Up:</font></p>
+  <ion-list>
+
+  <ion-item>
+    <ion-label position="floating"> Pilih Game </ion-label>
+    <ion-select [(ngModel)]="pilih" class="popover-content" 
+   placeholder="Pilih Game">
+    <ion-select-option value="Mobile Legends">Mobile Legends</ion-select-option>
+    <ion-select-option value="PUBG">PUBG</ion-select-option>
+    <ion-select-option value="Free Fire">Free Fire</ion-select-option>
+    <ion-select-option value="Efootball">Efootball</ion-select-option>
+    <ion-select-option value="Clash Of Clans">Clash Of Clans</ion-select-option>
+    </ion-select>
+    </ion-item>
+
+    <ion-item>
+    <ion-label position="floating"> ID Game </ion-label>
+    <ion-input type="text" [(ngModel)]="id_game"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+    <ion-label position="floating"> Nama User Game </ion-label>
+    <ion-input type="text" [(ngModel)]="nama"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"> Email </ion-label>
+      <ion-input type="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+    <ion-item>
+      <ion-label position="floating"> No HP </ion-label>
+      <ion-input type="text" [(ngModel)]="nohp"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"> Pilih Jumlah Top Up </ion-label>
+        <ion-select [(ngModel)]="nominal" class="popover-content" 
+       placeholder="Pilih Jumlah Top Up">
+        <ion-select-option value="Rp5.000 = 12 Diamond">Rp5.000 = 12 Diamond</ion-select-option>
+        <ion-select-option value="Rp10.000 = 25 Diamond">Rp10.000 = 25 Diamond</ion-select-option>
+        <ion-select-option value="Rp15.000 = 40 Diamond">Rp15.000 = 40 Diamond</ion-select-option>
+        <ion-select-option value="Rp20.000 = 50 Diamond">Rp20.000 = 50 Diamond</ion-select-option>
+      </ion-select>
+      </ion-item>
+
+     <ion-item>
+      <ion-label position="floating"> Metode Pembayaran </ion-label>
+      <ion-select [(ngModel)]="metode" class="popover-content" 
+     placeholder="Metode Pembayaran">
+      <ion-select-option value="Gopay">Gopay</ion-select-option>
+      <ion-select-option value="Dana">Dana</ion-select-option>
+      <ion-select-option value="Pulsa">Pulsa</ion-select-option>
+      <ion-select-option value="Bank">Bank</ion-select-option>
+      <ion-select-option value="OVO">OVO</ion-select-option>
+      <ion-select-option value="Link Aja">Link Aja</ion-select-option>
+      </ion-select>
+      </ion-item>
+      </ion-list>
+
+    <div padding>
+      <ion-button expand="block" color="success" size="medium"
+     (click)="addRegister()"><ion-icon name="trending-up-outline"></ion-icon>
+     Beli</ion-button>
+      
+      </div>
+      </ion-card-content> 
+      </ion-card>
+     </ion-content>

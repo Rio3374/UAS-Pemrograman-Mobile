@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar bg color="danger">
+    <ion-title>DATA TRANSAKSI TOP UP</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content bg color="secondary">
+ <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+  <ion-refresher-content
+    pullingIcon="arrow-dropdown"
+    pullingText="Pull to refresh"
+    refreshingSpinner="circles"
+    refreshingText="Refreshing...">
+  </ion-refresher-content>
+</ion-refresher>
+
+<ion-card *ngFor="let game of games">
+  <ion-card-header bg color="dark">
+    <ion-card-subtitle>ID Game: {{game.id_game}}, Email: {{game.email}}, No.HP: {{game.nohp}}</ion-card-subtitle>
+</ion-card-header>
+<ion-card-header> 
+    <ion-card-title>Game: {{game.pilih}}</ion-card-title>
+    <ion-card-title>{{game.nama}}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-header bg color="dark">
+  <ion-card-subtitle>
+    Jumlah Top Up: {{game.nominal}},
+    Metode Pembayaran: {{game.metode}}
+  </ion-card-subtitle>
+  </ion-card-header>
+</ion-card>
+
+
+
+<ion-infinite-scroll  (ionInfinite)="loadData($event)">
+  <ion-infinite-scroll-content
+    loadingSpinner="bubbles"
+    loadingText="Loading more data...">
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll>
+
+</ion-content>
